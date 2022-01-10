@@ -1,0 +1,51 @@
+{
+  "employee-record": [
+    {
+      "empId": "3561",
+      "empName": "Hello Dear",
+      "empEmail": "hello@hello.com",
+      "empPhone": "9897978675",
+      "empCity": "Delhi",
+      "empGender": "male",
+      "news": true,
+      "id": 9
+    },
+    {
+      "empId": "8789",
+      "empName": "Kamal Nath 1",
+      "empEmail": "kamal@hotmail.com",
+      "empPhone": "8978989773",
+      "empCity": "Mada",
+      "empGender": "male",
+      "news": true,
+      "id": 11
+    },
+    {
+      "empId": "7656",
+      "empName": "Harish",
+      "empEmail": "harish@gmail.com",
+      "empPhone": "7675656579",
+      "empCity": "Jamnagar",
+      "empGender": "male",
+      "news": true,
+      "id": 12
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

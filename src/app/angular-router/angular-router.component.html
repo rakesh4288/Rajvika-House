@@ -1,0 +1,242 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">  
+                <h1 class="text-warning">{{pageTitle}} 
+                    <i class="fa fa-bath" aria-hidden="true"></i>
+                </h1> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="router-info-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <ul>
+                    <li>Angular Router concepts is same as traditional navigation which is from one page to another page. When you want to move from one page to another page then you can use Router to navigate.</li>
+                    <li>But here is one best benefit to use Router is - If you using Router Module in your application then page will loaded without refreshing the page. So in this way you can say this is called SPA (Single Page application) </li>
+                    <li>In a traditional approach if you requested any URL it does loaded but full refresh of the web page Hence sometimes website is responding slower. I mean website performance can be slow because everytime it get loaded with refreshing the web page.</li>
+                    <li>Router is nothing but just a mechanism which enables user to navigate different views and component across the application.</li>
+                    <li>Routing helps to defining the application navigation across the web pages. </li>
+                    <li>And Mainly it is accepting two things - one is 'path' where you want to navigate and another one 'component' Mean which component you want to load after reaching the navigation</li>
+                </ul>
+                
+                <hr>
+                <p class="alert alert-success">
+                    <b>What is Wildcard Route in Angular?</b> <br> 
+                    Actually the Wildcard Route is basically used in Angular Application to handle the invalid URLs. Whenever the user is trying to enter some invalid URL or if you have deleted some existing URL from your application, then by default 404 page not found error page is displayed. This is more of avoiding the confusing while navigation to website.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="router-info-2">
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col-6">
+                    <p>
+                        <img src="./assets/images/router_1.png" class="img-fluid" alt="">
+                    </p>
+                </div>
+
+                <div class="col-6">
+                    <p>
+                        <img src="./assets/images/router_2.png" class="img-fluid" alt="">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="routerLink-router">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">      
+                <h2>What is the differences between [routerLink] and routerLink</h2>
+                <p>Both we are using to navigating the different components But here we have some logical differences between both of them.</p>
+            </div>
+    
+            <div class="col-6">
+                <div class="alert border-danger">
+                    <h4>[routerLink]</h4>
+                    <p class="text-info">When you are using [ ] brackets then it means you can use the bindable property and if you are assigning the bindable property so in that case you have a opportunity to change the value from class level</p>
+    
+                    <p>
+                        And with brackets there is one special thing is that - you can also pass the parameter to the URL and you can use them for further.
+                    </p>
+                    <img src="../assets/images/routerLink_1.png" class="img-fluid" alt="">
+                </div>
+            </div>
+    
+            <div class="col-6">
+                <div class="alert border-success">
+                    <h4>routerLink</h4>
+                    <p class="text-danger">If you are using routerLink without bracket and passing the string value that means your value can not be change throughout the application. It will be fixed for the all times. </p>
+                    <img src="../assets/images/routerLink_2.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray-with-border">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">  
+                <h2>What is Route Guards? <i class="fa fa-paper-plane-o" aria-hidden="true"></i></h2>  
+                <ul>
+                    <li>Route Guards concept is same as we know in our day-to-day life. Routes guards are always working as security layer to the any application.</li>
+                    <li>If a user has authenticated then a user can attempt the next requested screen otherwise not. It means if you have a valid user credentials then you can visit a particular view.</li>
+                    <li>Route Guards are always implemented as service that needs to be provided so we always make them @Injectable() while creation. </li>
+                    <li>Route Guards are always returning true or false and telling you if your access is allowed or not.</li>
+                </ul>
+                <hr>
+                
+                <h4>We have some existing Route Guards:</h4>
+                <p>
+                    <b>CanActivate:</b> while redirecting to other page CanDeactivate guard will ask you - <span class="text-danger">are you really want to leave this page, once you confirm then you can leave!</span>
+                </p>
+
+                <p>
+                    <b>CanActivateChild:</b> This helps us to decide whether child routes can be activated or not. It is using for checking if user can visit child routes or not.
+                </p>
+
+                <p>
+                    <b>CanDeactivate:</b> This help us to decide to whether route can be deactivated or not. Generally, this is using for giving warning to user, if user navigating from component So it is using to check to see if user can exit or not. This is like JavaScript confirm dialog.
+                </p>
+
+                <p>
+                    <b>Resolve:</b> It is using for route data retrieval before route activation.  
+                </p>
+
+                <p>
+                    <b>CanLoad:</b> Checks to see if the user can navigate to the module which are lazy loaded.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="authentication-authorization" class="bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">  
+                <h2>What is Authentication and Authorization? 
+                    <i class="fa fa-user" aria-hidden="true"></i> &nbsp;
+                    <i class="fa fa-user-times" aria-hidden="true"></i>
+                </h2>
+               <p>
+                Authentication is very important process in the system with respect to security. ... Authorization is the process of giving permission to the user to access certain resource in the system. Only the authenticated user can be authorised to access a resource.
+               </p>
+
+               <h5>Authentication</h5>
+               <p>
+                Actually Authentication is the process where a user is passing their login credentials to the server and server is examine with their login data and throughing a JWT (JSON Web Token) as return, And in this return we have a either True value or False. so this entire process is called a Authentication.</p>
+
+                <p>
+                    If JWT find correct user credentails then it can enable the page that you request so far.
+                </p>
+
+                <h5>Authorization</h5>
+                <p>
+                    After login successfully, a different user have a different level of access. Some user may have access of everything and some user may have restricted level of access to resources. We can relate this concept by Subscribed and Unsubscribed users. As per this concept subscribed users can access everything about the application but unsubscribed users have not full access of the application. 
+                </p>
+
+                <p>
+                    <img src="./assets/images/JWT.png" class="img-fluid" alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="lazy-loading" class="bg-purple text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">  
+                <h2 class="text-white">Lazy Loading <i class="fa fa-spinner" aria-hidden="true"></i></h2>
+                <h4 class="text-warning">Lazy Loading means on Demand Loading</h4>
+                <p>
+                    Lazy Loading is one of the most excellent features from Angular. By using this feature our application performance will be high Because it does not load everything while loading the web page. 
+                </p>
+
+                <p>
+                    Earlier, in a traditional approach when main home page is loaded on the page at this time everything gets loaded and by this approach our application performance was not good.
+                </p>
+
+                <p>
+                    Lazy loading modules speed up our applications startup time actually by this using approach when you need a page only that time your component will get loaded not all request. Means when you navigate the component only on that time your component gets loaded.
+                </p>
+
+                <p>
+                    The concept of lazy loading is in angular requires us to format the application in a certain way. All the assets that are to be lazy loaded should be added to its own module. Lazy loading configuaration will be setup in the main app routing module file. 
+                </p>
+                
+
+                <p>
+                    <img src="./assets/images/router_2.png" class="img-fluid" alt="">
+                </p>
+
+                <div>
+                    <h4 class="text-warning">How to integrate Lazy Loading Module ?</h4>
+                    <ul>
+                        <li>Firstly we need create sub module on each and every component.</li>
+                        <li>There will be two files: one is Module & another one is routing</li>
+                        <li>We need to integrate the .forChild() routes inside routing file </li>
+                        <li>Then this routing file need to integrate with module file.</li>
+                        <li>Here we have App.routing file in root level and need to integrate this sub module in main path.</li>
+                        <li>By this approach your all component will not be loaded. when you request any component on that time your component gets loaded.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="query-parameter">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">  
+                <h2> What are Query Parameters in Angular? </h2>
+                <p>
+                    Query parameters is one of the best ways to pass the value into URL with parameter. if you want to pass the values via HTTP path, then we can use Query Params for this. 
+                </p>
+                
+                <p>
+                    <b>Example like:</b>
+                    https://www.abc.com/profile?name=”Rakesh”&address=”Pune”
+                </p>
+
+                <p>
+                    Let’s use a very simple example: If we want to navigate the web page and we can also pass the value as a parameter and after navigation we can retrieve those passed parameterized values and we can use for further requirement.
+                </p>
+
+                <h5>Query Params With Router.navigate:</h5>
+
+                <p>
+                    <img src="./assets/images/router_3.png" class="img-fluid" alt="">
+                </p>
+
+                <p>
+                    The result will be look like this in URL:<br>
+                    <img src="./assets/images/router_4.png" class="img-fluid" alt="">
+                </p>
+
+                <p>
+                    You can also attach the multiple query params like this: <br>
+                    <img src="./assets/images/router_5.png" class="img-fluid" alt="">
+                </p>
+
+                <p>
+                    The result will be look like this in URL:<br>
+                    <img src="./assets/images/router_6.png" class="img-fluid" alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

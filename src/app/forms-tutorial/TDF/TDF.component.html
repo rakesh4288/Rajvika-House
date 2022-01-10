@@ -1,0 +1,172 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div  class="float-left">
+                    <h1>{{pageTitle}} <i class="fa fa-list-alt" aria-hidden="true"></i> </h1>
+                </div>
+    
+                <div class="float-right">
+                    <button class="btn btn-sm btn-outline-danger" (click)="backToPage()">
+                        <i class="fa fa-backward" aria-hidden="true"></i> Back
+                    </button>
+                </div>
+    
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+            <p>
+                Use template-driven forms when we need to develop the static forms. Static means the structure and logic of a form is fixed. E.g. the number of form fields does not vary, form validation rules are the same for different user roles, etc.
+            </p>
+
+            <p>
+                Examples are login forms, reset password forms, forms to enter and edit address data, order data and similar fix data structures.
+            </p>
+
+            <p class="text-danger">
+                In the template-driven approach the form structure and logic are mainly implemented in HTML side. 
+            </p>
+
+            <p>
+                When we are talking about “template-driven” forms, actually we are talking about the all kind of forms we’re used to with Angular, whereby we bind directives and behavior to our templates, and let Angular roll with it. Examples of these directives we’d use are ngModel and perhaps required, minlength and so forth. On a high-level, this is what template-driven forms achieve for us - by specifying directives to bind our models, values, validation and so on, we are letting the template do the work under the scenes.
+
+            </p>
+
+            <p class="text-primary">
+                Template Driven Forms is not suitable for more complex forms. If you have simple form then you go with TDF otherwise Reactive Forms is more suitable for handling this.
+            </p>
+        </div>
+    </div>
+</div>
+
+<section class="bg-gray-with-border">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                <h3>How to work with Template Driven Forms?</h3>
+                <p>Before getting started to work with Template driven form make sure this Forms Module is imported into your app module. Without importing the Form Module, we cannot achieve the properties of Template Driven Forms. Like form input state - touched, untouched, valid, unvalid,</p>
+        
+                <p class="text-danger">This is not available by default while project is initiated. You must have to import this.</p>
+        
+                <p>
+                    Very Earlier FormsModule is available inside @angular/core package and this is available till angular version 4, But after in next version angular team decided to move the library in a separate way so currently this FormModule is present inside @angular/forms.
+                </p>
+        
+                <p class="text-danger">If ngModel is used within a form tag, either the name attribute must be set or the form control must be defined as 'standalone' in ngModelOptions.</p>
+        
+                <h6>Angular form value</h6>
+                <pre>
+                    {{userForm.value | json}}
+                </pre>
+                
+                <hr>
+                <h6>Student Model value</h6>
+                <pre>
+                    {{studentModel | json}}
+                </pre>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <h4>Template Driven Forms</h4>
+                <div class="alert border-primary">
+                    <form #userForm="ngForm" (ngSubmit)="registerStudent(userForm)">
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            <input type="text" #TRV_name="ngModel" class="form-control" [class.is-invalid]="TRV_name.invalid && TRV_name.touched" name="studentName" [(ngModel)]="studentModel.studentName" required minlength="3">
+
+                            <div *ngIf="TRV_name.errors && (TRV_name.invalid || TRV_name.touched)">
+                                <small class="text-danger" *ngIf="TRV_name.errors.required">
+                                    Please enter valid input !
+                                </small>
+
+                                <small class="text-danger" *ngIf="TRV_name.errors.minlength">
+                                    Please enter minimum 3 value !
+                                </small>
+                            </div>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="email" class="form-control" name="userEmail" id="" [(ngModel)]=
+                            "studentModel.studentEmail" required>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="">Phone</label>
+                            <input type="text" #TRV_phone="ngModel" pattern="^\d{10}$" class="form-control" [class.is-invalid]="TRV_phone.invalid && TRV_phone.touched" name="userPhone" [(ngModel)]="studentModel.studentPhone" required>
+
+                            <div *ngIf="TRV_phone.errors && (TRV_phone.invalid || TRV_phone.touched)">
+                                <small class="text-danger" *ngIf="TRV_phone.errors.required">This field is required !</small>
+                                <small class="text-danger" *ngIf="TRV_phone.errors.pattern">Phone number must be equal to 10 digits only !</small>
+                            </div>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="">City</label>
+                            <select class="form-control" #TRV_city="ngModel" name="userCity" id="" [(ngModel)]="studentModel.studentCity" required >
+                                <option value="">Select Your City</option>
+                                <option *ngFor="let cityName of cityList" value="{{cityName}}">{{cityName}}</option>
+                            </select>
+
+                            <small class="text-danger" *ngIf="TRV_city.invalid && TRV_city.touched">
+                                Please select your city !
+                            </small>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="">Gender</label>
+        
+                            <div class="form-check">
+                                <input type="radio" #TRV_gender="ngModel" class="form-check-input" value="male" id="maleID" name="userGender" [(ngModel)]="studentModel.studentGender" required>
+                                <label for="maleID" class="form-check-label">Male</label>
+                            </div>
+        
+                            <div class="form-check">
+                                <input type="radio" #TRV_gender="ngModel" class="form-check-input" value="female" id="femaleID" name="userGender" [(ngModel)]="studentModel.studentGender" required> 
+                                <label for="femaleID" class="form-check-label">Female</label>
+                            </div>
+
+                            <small *ngIf="TRV_gender.invalid && TRV_name.touched">Please choose your gender</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div>
+                                <input type="checkbox" #TRV_promotion="ngModel" value="promotional" id="promotionID" name="promotion" [(ngModel)]="studentModel.promotion">
+                                <label for="promotionID">Send me Promotional Offers</label>
+                            </div>
+
+                            <small class="text-danger" *ngIf="TRV_promotion.invalid && TRV_promotion.touched">
+                                Please subscribe for get promotional offers !
+                            </small>
+                        </div>
+        
+                        <div class="form-group">
+                            <button class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div>
+                    <img src="./assets/images/TDF_1.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div>
+                    <img src="./assets/images/TDF_2.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

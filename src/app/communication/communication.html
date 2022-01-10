@@ -1,0 +1,108 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div  class="float-left">
+                    <h1>{{pageTitle}} <i class="fa fa-cogs" aria-hidden="true"></i> </h1>
+                </div>
+    
+                <div class="float-right">
+                    <button class="btn btn-sm btn-warning" (click)="backToPage()">
+                        <i class="fa fa-backward" aria-hidden="true"></i> Back
+                    </button>
+                </div>
+    
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="input-decorator">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <P>
+                    We have few methods where we can establish the communication between components.
+                </P>
+            
+                <div>
+                    <li>@Input() Decorator</li>
+                    <li>@Output Decorator</li>
+                    <li>Using services also</li>
+                    <li>Behaviour Subject is also one of the method by using this we can pass message from different components by changing at one place.</li>
+                    <li>@ViewChild() decorator is also one kind of option where you can make a communication.</li>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <h4>What is the process of @Input() decorator?</h4>
+                <p>
+                    Well @Input() decorator is used to send information from parent component to child component. When we want to communicate between parent and child then we must need to use and import @Input() decorator.
+                </p>
+
+                <p>Steps to work with @Input() decorator</p>
+                <div>
+                    <ul>
+                        <li>Firstly, we need to make whatever logic or information that what we need to send into child component</li>
+                        <li>Caution: These logics need to implemented in parent component because we are sending data from to child</li>
+                        <li>So far so good then we need to import child component selector in parent app and assign [property binding] with that logic’s variable.</li>
+                    </ul>
+
+                    <div>
+                        <img src="./assets/images/input_1.png" class="img-fluid rounded" alt="">
+                    </div>
+
+                    <p class="text-info">For this entire process you must need to include the Input and Output from @angular/core library</p>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div>
+                    <img src="./assets/images/input_vs_output.jpg" class="img-fluid rounded" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="component-communication">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <parent-com></parent-com>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-purple text-white" id="output-decorator">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h4>What is the process of @Output() decorator?</h4>
+                <p>
+                    Output decorator is the reverse order of Input decorator. When you want to send the data from child to parent component so this entire process is called @Output Decorator. This is Vice-Versa to each other.
+                </p>
+
+                <p>Steps to work with @Output() decorator</p>
+                <div>
+                    <ul>
+                        <li>Firstly, we need to make whatever logic or information that what we need to send into child component</li>
+                        <li>You need to use EventEmitter for this Because Child invoked the value by emit method.</li>
+                        <li>Then in parent component element selector we need map the child event using () brackets and place the same event which you created into child component</li>
+                        <li>Next - you copy the event name and use into parent component class do whatever you want.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <img src="./assets/images/output_1.png" class="img-fluid rounded" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

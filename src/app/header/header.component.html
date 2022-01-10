@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <a class="navbar-brand" [routerLink]="['/home']">Rajvika House</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active-nav-bar']">Home <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['rajvika-directives']" [routerLinkActive]="['active-nav-bar']">Directives</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            UI Interview
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['UI-interview-one']">UI Interview Part I</a>
+            <a class="dropdown-item" [routerLink]="['rajvika-communication']">Component Communication</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['rajvika-dom']">View Encapsulation & Shadow Dom</a>
+            <a class="dropdown-item" [routerLink]="['view-child-decorator']">View Child Decorator</a>
+            <a class="dropdown-item" href="https://marksheet.io/css-animations.html" target="_blank">Mixin in Sass</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['rajvika-pipes']" [routerLinkActive]="['active-nav-bar']">Pipes</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['rajvika-router']" [routerLinkActive]="['active-nav-bar']">Router</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['rajvika-forms']" [routerLinkActive]="['active-nav-bar']">Angular Forms</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['rajvika-binding']" [routerLinkActive]="['active-nav-bar']">Angular Binding</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['angular-services']" [routerLinkActive]="['active-nav-bar']">Angular Services</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['employee-crud']" [routerLinkActive]="['active-nav-bar']">Employee CRUD</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

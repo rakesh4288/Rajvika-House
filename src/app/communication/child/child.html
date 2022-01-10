@@ -1,0 +1,21 @@
+<div class="alert border-success">
+    <p><u>Child component</u></p>
+    <p class="text-danger">
+        <i>
+            Similarly if you want to send the data from Child component to parent component then you use @output() decorator. But in this case you need apply event emmiter to emit the value from child.
+        </i>
+    </p>
+    
+    <marquee behavior="" direction="">
+        <h4>{{MSD}}</h4>
+    </marquee>
+
+    <div>
+        <label for="">Enter Something</label> - 
+        <input type="text" name="" id="" #inputVale> &nbsp;
+        <button type="submit" class="btn btn-info btn-sm" (click)="doSomething(inputVale)">Save</button>
+        <div>
+            {{BS_Value}}
+        </div>
+    </div>
+</div>

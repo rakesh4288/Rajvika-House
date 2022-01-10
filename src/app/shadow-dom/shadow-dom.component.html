@@ -1,0 +1,147 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div  class="float-left">
+                    <h1>{{pageTitle}} <i class="fa fa-retweet" aria-hidden="true"></i> </h1>
+                </div>
+    
+                <div class="float-right">
+                    <button class="btn btn-sm btn-dark" (click)="backToPage()">
+                        <i class="fa fa-backward" aria-hidden="true"></i> Back
+                    </button>
+                </div>
+    
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div id="shadow-dom">
+                    <p>
+                        Before starting with how ViewEncapusaltion works in Angular application we should know about the term Shadow DOM first.
+                    </p>
+    
+                    <h3>Shadow DOM:</h3>
+    
+                    <p class="text-danger">
+                        In a simple word, Shadow DOM will allow us to apply Scoped Styles to elements without affecting other elements.
+                        I would say in simple word - Shadow DOM will allow us to apply the CSS style in child component without affecting to the other elements.
+                    </p>
+                </div>
+
+                <hr>
+
+                <div id="sample">
+                    <p>
+                        In this article, we will see what actually view encapsulation is? How it is working? What are the types of view encapsulation available in angular? What is Shadow DOM? Does angular application support the scope for styling, even though the browser doesn’t support shadow DOM? We will see this entire list of questions in details one by one!
+                    </p>
+    
+                    <p>
+                        So to start with, let me explain you the use case, say for example we had two components
+                    </p>
+    
+                    <p>
+                        1. app. component ( parent component) <br>
+                        2. demo. component( child component)
+                    </p>
+    
+                    <p>
+                        We will be using the demo component inside the app component, all right! Now furthermore we had an h1 selector on both the components to display the title, and as view encapsulation works with styling, we had created a style in app component for the selector h1. Now as we are calling the demo component inside the app component and demo component also had an h1 selector. <span class="text-danger">What happened then? Does that style which we created on app component should automatically be applied to the demo component’s h1 selector? Well, the answer is NO(Actually depends on which ViewEncapsulation Type you are using), Angular application by default uses ViewEncapuslation mode to emulate.</span> Now, what ’s that? So this article has all the answers for the ViewEncapsulation and how it is working with the angular application.
+                    </p>
+                </div>
+
+                <div id="img" class="row">
+                    <div class="col-6">
+                        <p>
+                            <img src="./assets/images/view_encapsulation_1.jpg" class="img-fluid" alt="">
+                        </p>
+                    </div>
+
+                    <div class="col-6">
+                        <p>
+                            <img src="./assets/images/view_encapsulation_2.png" class="img-fluid" alt="">
+                        </p>
+                    </div>
+                </div>
+                
+                <div id="ViewEncapsulation-None">
+                    <h3>1. ViewEncapsulation.None</h3>
+                    <p>
+                        So as discussed above use case, I had created two components as shown below,
+                    </p>
+
+                    <h4>app.component.html</h4>
+                    <p>
+                        <img src="./assets/images/view_encapsulation_3.png" class="img-fluid" alt="">
+                    </p>
+
+                    <h4>app.component.ts</h4>
+                    <p>
+                        <img src="./assets/images/view_encapsulation_4.png" class="img-fluid" alt="">
+                    </p>
+
+                    <h4>app.component.css</h4>
+                    <p>
+                        <img src="./assets/images/view_encapsulation_5.png" class="img-fluid" alt="">
+                    </p>
+
+                    <hr>
+
+                    <h5 class="text-success">In the demo component, we are also using an h1 selector to display title. And as we are using ViewEncapsulation mode to None, the same style of parent component will assign to the child component. Find the demo component below,</h5>
+
+                    <h4>demo.component.html</h4>
+                    <p>
+                        <img src="./assets/images/view_encapsulation_6.png" class="img-fluid" alt="">
+                    </p>
+
+                    <h4>demo.component.ts</h4>
+                    <p>
+                        <img src="./assets/images/view_encapsulation_7.png" class="img-fluid" alt="">
+                    </p>
+
+                    <p>
+                        <img src="./assets/images/view_encapsulation_8.png" class="img-fluid" alt="">
+                    </p>
+                </div>
+                <hr>
+
+                <div id="ViewEncapsulation-Emulated">
+                    <h3>2. ViewEncapsulation.Emulated</h3>
+                    <p>
+                        Now if we changed the ViewEncapsulation mode to emulated which is the by default option comes with an angular application, the output will be different. although it is not using Shadow DOM, it can still able to scope the style to a particular element. And as it is not using Shadow DOM so it can still run in the browser which doesn’t support Shadow DOM. Below is the updated app.component.ts
+                    </p>
+
+                    <p>
+                        <img src="./assets/images/view_encapsulation_9.png" class="img-fluid" alt="">
+                    </p>
+
+                    <p class="text-danger">We had just updated the ViewEncapsulation Mode rest everything is same as the previous case.</p>
+
+                    <p>
+                        <img src="./assets/images/view_encapsulation_10.png" class="img-fluid" alt="">
+                    </p>
+
+                    <div class="alert alert-info">
+                        <p>
+                            As you can see our components and style are rewritten, and it has added unique kind of id to style as well as our selectors, to scope the style without using the Shadow DOM. Isn’t it a great approach?
+                        </p>
+
+                        <p>
+                            As you can see it had assign id _ngcontent-c0 to our style and also the same assigned the same id to the h1 selector of our app.component, but in case of demo component’s h1 selector, it has assigned the different id and i.e. _ngcontent –c1.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+
+                <h2>Parent Component</h2>
+                <child-shadow></child-shadow>
+            </div>
+        </div>
+    </div>
+</section>

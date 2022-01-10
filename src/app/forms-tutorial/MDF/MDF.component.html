@@ -1,0 +1,117 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div  class="float-left">
+                    <h1>{{pageTitle}} <i class="fa fa-list-alt" aria-hidden="true"></i> </h1>
+                </div>
+    
+                <div class="float-right">
+                    <button class="btn btn-sm btn-outline-danger" (click)="backToPage()">
+                        <i class="fa fa-backward" aria-hidden="true"></i> Back
+                    </button>
+                </div>
+    
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <p>A reactive form looks on the surface pretty much like a template driven form. But in order to be able to create this type of forms, we need first to import a different module into our application:</p>
+                <p>
+                    Note that here we imported ReactiveFormsModule instead of FormsModule. This will load the reactive forms directives instead of the template driven directives.
+                </p>
+
+                <p>
+                    If we find ourselves in a situation where we would happen to need both, then we should import both modules, more on this later.
+                </p>
+
+                <ul>
+                    <li>Reactive forms modules is suitable for complex forms</li>
+                    <li>Where we have dynamic fields and number of form fields does not vary</li>
+                    <li>Codes and the logic resides in the component class</li>
+                    <li>In Reactive Form all control represented by Model</li>
+                    <li>So Basically form is represented by FormGroup and Each form control is represented by FormControl in the class</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <div class="alert border-dark">
+                    <form [formGroup]="studentForm">
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            <input type="text"  class="form-control" formControlName="studentName">
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="email" class="form-control" formControlName="studentEmail" id="">
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="">Phone</label>
+                            <input type="text" class="form-control" formControlName="studentPhone">
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="">City</label>
+                            <select class="form-control" formControlName="studentCity">
+                                <option value="">Select Your City</option>
+                                <option *ngFor="let cityName of cityList" value="{{cityName}}">{{cityName}}</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="">Gender</label>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" value="Male" id="maleID" formControlName="studentGender">
+                                <label for="maleID" class="form-check-label">Male</label>
+                            </div>
+        
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" value="Female" id="femaleID" formControlName="studentGender"> 
+                                <label for="femaleID" class="form-check-label">Female</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div>
+                                <input type="checkbox" value="promotional" id="promotionID" formControlName="promotion">
+                                <label for="promotionID">Send me Promotional Offers</label>
+                            </div>
+                        </div>
+        
+                        <div class="form-group">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                <ul class="text-danger">
+                    <li>Firstly you need to import ReactiveFormsModule from @angular/forms</li>
+                    <li>Import FormGroup & FormControl from @angular/forms</li>
+                    <li>Entire form should be associated with [formGroup]="formName" (which you used in class)</li>
+                    <li>And each form input we will use formControlName="studentName"</li>
+                    <li>setValue is using for setting the default value of the form. Basically this method is very useful when we want to populate the full user details after clicking any button</li>
+                    <li>Form Builder is nothign but a simpler or alternative method to group the form control</li>
+                    <li>For creating validation you need to include the Validators plugin from @angular/forms</li>
+                </ul>
+                
+                <h6>Form Model Value</h6>
+                <pre>{{studentForm.value | json}}</pre>
+                <div>
+                    <img src="./assets/images/MDF_2.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

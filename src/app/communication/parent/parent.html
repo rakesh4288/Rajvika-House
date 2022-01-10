@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-header">Parent component</div>
+    <div class="card-body">
+        <p class="text-danger">
+            <i>Basically when you want to communicate between two component you can use the @Inout() decorator. By input decorator you can send the data from Parent component to child component.</i>
+        </p>
+        <child-com [MSD]="P_msg" (childEvent)="getEventFromChild($event)"></child-com>
+
+        <marquee behavior="alternate" direction="">
+            <h4 class="text-success">{{receiveChildValue}}</h4>
+        </marquee>
+    </div>
+</div>

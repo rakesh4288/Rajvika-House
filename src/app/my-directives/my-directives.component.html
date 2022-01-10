@@ -1,0 +1,172 @@
+<section id="page-title" class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h1 class="text-warning">{{pageTitle}} <i class="fa fa-free-code-camp" aria-hidden="true"></i> </h1>  
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-12">
+            <ul>
+                <li>Directives are something which is changing the behaviour or appearance of DOM that means Directives are able to manipulate the DOM</li>
+                <li> Components are the most common type of Directives in Angular </li>
+                <li class="text-danger">The main Difference between Component & Directives is that - Component have a View but Directives does not have a view</li>
+            </ul>
+
+            <p>If any HTML element behavioral changes are appeared in the page so Directives is the only responsible for this. Because by using Directives only we can change the appearance or behavior of the specific element.</p>
+
+            <p class="text-success">And you can also say that Directives are Angular Syntax which are associated with HTML and changing the behaviour of DOM</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-green">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12"> 
+                <div>
+                    <img src="./assets/images/directives_1.png" class="img-fluid" alt="">
+                </div>
+            </div>
+    
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12"> 
+                <p class="text-white">So when we need to create custom directive we need to import Directive and ElementRef plugin from angular core just like this screenshot.</p>
+
+                <button class="btn btn-dark" custom-dir>
+                    &nbsp; <i class="fa fa-shower" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <marquee behavior="" direction="left">
+        <h3 class="text-warning">Function Expression can not be Hoisted which is created by Let & Var keyword in JavaScript !</h3>
+    </marquee>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"> 
+                <div>
+                    <h3>Three Kinds of Directives in Angular:</h3>
+                    <p>We have three kind of directives available in Angular like below</p>
+                    <ul>
+                        <li><b>Structural Directives:</b> By using this directives we can change or Manipulate DOM by adding or removing the element</li>
+                        <li><b>Attributes Directives:</b> Changing the behavior and appearance of the specific Element</li>
+                        <li><b>Component Directives:</b> Component is also one kind of directives with Template and view</li>
+                    </ul>
+    
+                    <p>*ngIf is used to display the data based on conditions and else block can shown by using the ng-template.</p>
+                    <p>Start(*) means is going to change the template structure</p>
+    
+                    <div>
+                        <h6>Angular *ngIf with Else block</h6>
+                        <div *ngIf="isLoggedIn; else loggedOut">
+                            <span class="text-primary"><i>Hello Rakesh welcome back to Infosys !</i></span>
+                        </div>
+    
+                        <ng-template #loggedOut>
+                            <span class="text-danger">Logged out successfully</span>
+                        </ng-template>
+                        <hr>
+    
+                        <h6>Angular *ngIf with Else & then block</h6>
+    
+                        <ng-container *ngIf="isLoggedIn; then logIn; else logOut"> </ng-container>
+                        <ng-template #logIn> 
+                            <span class="text-primary"><i>Hello Rakesh welcome back to Infosys ! 
+                                <br> this statement is coming from THEN block !!!</i></span>
+                        </ng-template>
+    
+                        <ng-template #logOut>
+                            <span class="text-danger">Logged out successfully !!!</span>
+                        </ng-template>
+                    </div>
+                </div>
+    
+                <hr>
+                <div class="card">
+                    <div class="card-header">ngSwitch Case</div>
+                    <div class="card-body">
+                        <select [(ngModel)]="switchColor">
+                            <option selected>Select color</option>
+                            <option value="Red">Red Color</option>
+                            <option value="Green">Green Color</option>
+                            <option value="Blue">Blue Color</option>
+                        </select>
+    
+                        <div [ngSwitch]="switchColor">
+                            <div *ngSwitchCase="'Red'" class="text-danger">Red Color</div>
+                            <div *ngSwitchCase="'Green'" class="text-success">Green Color</div>
+                            <div *ngSwitchCase="'Blue'" class="text-primary">Blue Color</div>
+                            <div *ngSwitchDefault>This is Default Color Please select any one color from anyone from above options</div>
+                        </div>
+                        <br>
+                        <img src="./assets/images/ngSwitch.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"> 
+                <div class="card">
+                    <div class="card-header">What is the different type of built in directive in angular?</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Structural Directives: ngIf then else, ngFor, ngSwitch</li>
+                            <li>Attributes Directives: ngStyle & ngClass</li>
+                        </ul>
+    
+                        <div>
+                            <h5>Built-in Angular Directives</h5>
+                            <ul>
+                                <li>*ngIf</li>
+                                <li>*ngFor</li>
+                                <li>*ngSwtich</li>
+                                <li>ngClass</li>
+                                <li>ngStyle</li>
+                            </ul>
+                        </div>
+    
+                        <div *ngIf="condition" class="text-success">This content is rendered Because the condition is true.</div>
+                    </div>
+                </div>
+    
+                <div>
+                    <h6>Angular ngIf Example with && Operator</h6>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" [(ngModel)]="checkbox1" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" [(ngModel)]="checkbox2" id="exampleCheck2">
+                        <label class="form-check-label" for="exampleCheck2">Check me out</label>
+                      </div>
+                    <div *ngIf="checkbox1 && checkbox2" class="text-danger">Display me when both checkboxes are selected </div>
+                </div>
+                
+                <hr>
+    
+                <div>
+                    <h6>Angular ngIf Example with JavaScript || (OR) Operator</h6>
+                    <div *ngIf="checkbox1 == true || checkbox2 == true" class="text-danger">
+                        Display me when any checkboxes are selected
+                    </div>
+                    <img src="./assets/images/if_else_with_OR.png" class="img-fluid" alt="">
+                </div>
+    
+                <hr>
+    
+                <h6>*ngFor: Using this directives we sre showing Angular Main Parts</h6>
+                <ul>
+                    <li *ngFor="let ngList of angularModules">{{ngList}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

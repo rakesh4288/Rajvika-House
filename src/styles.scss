@@ -1,0 +1,185 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    // color: #001c3d;
+    color: #064575;
+    text-align: left;
+    background-color: #ffffff;
+    padding-top: 3.5rem;
+    height: 100%;
+}
+
+.pageBody{
+    min-height: 650px;
+}
+
+.cursorPointer{
+    cursor: pointer;
+}
+
+.siteFooter {
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    display: block;
+    background-image: linear-gradient(139deg, #fb8817,#ff4b01,#c12127, #e02aff);
+}
+
+.footer-content{
+    font-size: 12px;
+}
+
+.navbar{
+    padding: 10px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(0,212,255,1) 100%);
+    //box-shadow: 0 3px 6px 0px #888;
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+    //background: #3f51b5;
+}
+
+.navbar-brand{
+    font-size: 18px;
+}
+
+.nav-link{
+    display: block;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.active-nav-bar{
+    background-color: #800080;
+    color: #ffffff !important;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.page-header{
+    display: block;
+    height: 100px;
+    padding:25px 0;
+    // background: #f3f3f3;
+    background: #3f51b5;
+    margin-bottom: 10px;
+}
+
+h1{
+    font-size: 38px;
+    // color: #0c77d5;
+    color: #f3c848;
+    text-shadow: 0 2px 3px rgb(0 0 0 / 30%);
+}
+
+h2{
+    font-size: 34px;
+    color: #5606d0;
+}
+
+h3{
+    font-size: 30px;
+    color: #e40781;
+}
+
+h4{
+    font-size: 26px;
+    color: rgba(2,0,36,1);
+}
+
+h5{
+    font-size: 22px;
+    color: #055965;
+}
+
+h6{
+    font-size: 18px;
+    color: #0528ce;
+}
+
+.hr-strong{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+    height: 2px;
+    background-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff);
+}
+
+.bg-green{
+    background: #116147;
+    margin: 20px 0;
+    padding: 30px 0;
+}
+
+.bg-gray {
+    background: #f1f7f6;
+    padding: 40px 0;
+}
+
+.bg-gray-with-border{
+    background: #e2e9f1;
+    padding: 40px 0;
+    border-top: 2px dashed #092fea;
+    border-bottom: 2px dashed #092fea;
+    margin: 15px 0;
+}
+
+.bg-black{
+    background: #041d3a;
+    width: 100%;
+    position: relative;
+    height: auto;
+    padding: 20px 0;
+    margin: 20px 0;
+}
+
+.bg-blue{
+    // background:#036579;
+    background: #3f51b5;
+    margin: 20px 0;
+    padding: 30px 0;
+}
+
+.blue-bg-gradient{
+    display: block;
+    position: relative;
+    margin: 20px 0;
+    padding: 30px 0;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(0,212,255,1) 100%);
+}
+
+.bg-purple{
+    background: #800080;
+    margin: 20px 0;
+    padding: 30px 0;
+}
+
+.card-header{
+    padding: 8px 15px;
+}
+
+.card-body{
+    padding: 8px 15px;
+}
+
+.border-left-green{
+    border-left: 4px solid #04AA6D;
+}
+
+.border-right-green{
+    border-right: 4px solid #04AA6D;
+}
+
+.emp-table{
+    font-size: 13px;
+}
+.table td, .table th{
+    word-break: break-all;
+}
+
+

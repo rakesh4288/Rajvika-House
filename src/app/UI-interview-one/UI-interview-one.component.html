@@ -1,0 +1,194 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">            
+                <h1 class="text-warning">UI Interview Questions Answers !</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h2>Angular component lifecycle hook </h2>
+                <p>A component has a lifecycle which is managing by the Angular.</p>
+                <p>Angular creating this, rendering this, creating and rendering its children also, and checking it when its data-bound properties change, and destroys it before removing it from the DOM.</p>
+                <p>And when we are talking about lifecycle hooks that means- there is something which is created and destroyed so basically the journey of component from initial point to ending point, this is called Angular Life Cycle Hook
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div>
+                    <p>Angular provides eight interfaces to implement those as component goes from creation to destruction phases.</p>
+                    <ul class="text-primary">
+                        <li>constructor()</li>
+                        <li>ngOnChanges()</li>
+                        <li>ngOninit()</li>
+                        <li>ngDoCheck()</li>
+                        <li>ngAfterContentInit()</li>
+                        <li>ngAfterContentChecked()</li>
+                        <li>ngAfterViewInit()</li>
+                        <li>ngAfterViewChecked()</li>
+                        <li>ngOnDestroy()</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div>
+                    <img src="./assets/images/Angular_life_cycle_hook.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h3>Lifecycle sequence:</h3>
+                <a href="https://medium.com/bb-tutorials-and-thoughts/angular-understanding-angular-lifecycle-hooks-with-a-sample-project-375a61882478" class="btn btn-outline-danger btn-sm" target="_blank">Read More</a> <br><br>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Hook</th>
+                        <th>Purpose and Timing</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>ngOnChanges()</td>
+                        <td>Called before ngOnInit() and whenever one or more data-bound input properties change.</td>
+                      </tr>
+
+                      <tr>
+                        <td>ngOnInit()</td>
+                        <td>Initialize the directive/component after Angular first displays the data-bound properties and sets the directive/component's input properties.
+                            <br>
+                            <span>Called once, after the first ngOnChanges().</span>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>ngDoCheck()</td>
+                        <td>Called during every change detection run, immediately after ngOnChanges() and ngOnInit().</td>
+                      </tr>
+
+                      <tr>
+                        <td>ngAfterContentInit()</td>
+                        <td>Respond after Angular projects external content into the component's view / the view that a directive is in. <br>Called once after the first ngDoCheck().</td>
+                      </tr>
+
+                      <tr>
+                        <td>ngAfterContentChecked()</td>
+                        <td>Respond after Angular checks the content projected into the directive/component. <br>Called after the ngAfterContentInit() and every subsequent ngDoCheck().
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>ngAfterViewInit()</td>
+                        <td>Respond after Angular initializes the component's views and child views / the view that a directive is in.<br>Called once after the first ngAfterContentChecked().
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>ngAfterViewChecked()</td>
+                        <td>Respond after Angular checks the component's views and child views / the view that a directive is in. <br>Called after the ngAfterViewInit and every subsequent ngAfterContentChecked().
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>ngOnDestroy()</td>
+                        <td>Cleanup just before Angular destroys the directive/component. Unsubscribe Observables and detach event handlers to avoid memory leaks. <br> Called just before Angular destroys the directive/component.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="package-package-lock">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <h3>Difference between package.json and package-lock.json ?</h3>
+
+                <h5><b>package.json</b></h5>
+                <p>
+                    records the minimum version that your app needs. If you update the versions of a particular package, the change is not going to be reflected here.
+                </p>
+
+                <p>
+                    The package.json is used for more than dependencies - like defining project properties, description, author & license information, scripts, etc.
+                </p>
+
+                <p>
+                    So lets say I am having some library with ^3.0.0 in package.json and then library team releases version 3.5.2 and now when someone clone my repo and runs npm install in that directory they will get the version 3.5.2 (You can also put ~ instead of ^ it will update to latest patch version)
+                </p>
+
+                <ul>
+                    <li>This file contains information about project like defining project properties, description, author & license information, scripts, etc.</li>
+                    <li>There are two types of dependencies, first is the dependencies and another one is dev dependencies.</li>
+                    <li>The dev dependencies are required during the development process and the others are needed to run the application.</li>
+                </ul>
+
+                <hr>
+
+                <h5><b>package-lock.json</b></h5>
+                <p>
+                    Actually it is recording the exact version of each installed package in angular application which allows you to re-install them. Future installs will be able to build an identical dependency tree.
+                </p>
+
+                <p>
+                    The package-lock.json is solely used to lock dependencies to a specific version number.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+               <h3>Difference between tilde (~) and caret (^) in package.json</h3>
+               <p>
+                The tilde prefix simply indicates that the tilde (~) symbol will match the most recent patch version or the most recent minor version i.e. the middle number. For example, ~1.2.3 will match all 1.2.x versions but it will not match 1.3.0 or 1.3.x versions.
+               </p>
+
+               <p>
+                The caret indicates the first number i.e. the most recent major version. An example is in 1.x.x release the caret will update you and it will match with 1.3.0 but not 2.0.0.
+               </p>
+
+               <p>
+                ^ sign before the version tells the npm that if someone clones the project and runs the command npm install in the directory then it will install the latest minor version of the package in his node_modules.
+                </p>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                 <P>
+                     <img src="./assets/images/package_1.jpg" class="img-fluid" alt="">
+                 </P>
+
+                 <P>
+                    <img src="./assets/images/package-lock5.png" class="img-fluid" alt="">
+                </P>
+             </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h2>Angular Expression vs JavaScript Expression </h2>
+                <ol>
+                    <li>Angular Expression are evaluated in the scope context, Where JavaScript Expression are evaluated the Global context.</li>
+                    <li>After evaluated Angular return the undefined or null, Where JavaScript Expression returns the reference error or type error.</li>
+                    <li>Angular expression can not contain the commas or void & In Angular expression we should not define the functions.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>

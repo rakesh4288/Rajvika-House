@@ -1,0 +1,134 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div  class="float-left">
+                    <h1>{{pageTitle}} <i class="fa fa-list-alt" aria-hidden="true"></i> </h1>
+                </div>
+    
+                <div class="float-right">
+                    <!-- <button class="btn btn-sm btn-outline-warning" (click)="backToPage()">
+                        <i class="fa fa-backward" aria-hidden="true"></i> Back
+                    </button> -->
+                </div>
+    
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <p>
+                Angular forms are the same form concept as what we are using earlier in traditional approach. There are no any single changes in output because the design of form is still dependent upon the CSS styling. But there are huge changes in the term of development process.
+            </p>
+
+            <p>
+                Earlier few things were dependent upon the backend technologies regarding form validation but currently we can perform all kinds of validation from front end only using the power of Angular.
+            </p>
+
+            <div>
+                So Angular Forms are divided into two categories: <br><br>
+                <button class="btn btn-outline-primary" (click)="open_TDF_Form()">Template Driven Form</button> &nbsp;
+                <button class="btn btn-outline-danger" (click)="open_Reactive_Form()">Model Driven Form or Reactive Forms</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="bg-gray-with-border">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h2>Difference between template driven form and reactive form?</h2>
+                <p>
+                    With the template driven approach, you basically apply directives, such as ngModel, in your template. Based on these directives Angular will create formControl objects. This approach is good for building simple forms with basic validation (required, minlength, maxlength, etc)
+                </p>
+
+                <p>
+                    With the reactive approach, you basically need to create new instances of the formControls and formcontrolgroups in your component. Reactive forms are also the best choice for building more complex forms and are better in case you have the intention to implement unit testing for your forms
+                </p>
+
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                        <div class="alert border-success">
+                            <h5>Template Driven Form</h5>
+                            <ul>
+                                <li>Template Driven Form is suitable when we need to devlop the static form </li>
+                                <li>Where the form field validation are fixed </li>
+                                <li>Example are like Forgot password form, Login form</li>
+                                <li>All Form validation is done on Template side.</li>
+                                <li>We need to import the FormModule to work with Template Driven Form</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                        <div class="alert border-success">
+                            <h5>Reactive Form</h5>
+                            <ul>
+                                <li>Reactive Form is more suitable when we need to develop the some complex form </li>
+                                <li>Where form field is generating dynamically on the page validation is also more complex </li>
+                                <li>Example are like - Big Complex Registration form where new form field is generating based scenario</li>
+                                <li>All form validation is done in Class side. I mean Codes and the logic resides in the component class</li>
+                                <li>And For working with Reactive Form we must need to include ReactiveForm Module from angular/forms</li>
+                                <li>Here we have [formGroup] for Form tag. we need to associated and this will hold the one form</li>
+                                <li>and FormControl is used for each form field</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h3>What is difference between ngModel and [ngModel] and [(ngModel)] ?</h3>
+                <p>
+                    <b>ngModel:</b> This is reference of each form control, by using ngModel we can get all states of form control
+                </p>
+
+                <p>
+                    <b>[ngModel]:</b> This is one-way data binding, we can display any data from class to template file using [ngModel]
+                </p>
+
+                <p>
+                    <b>[(ngModel)]:</b> This is two-way data binding in angular. It is also called banana in box model. While working with [(ngModel)] we can pass data from view to component and component to view
+                </p>
+
+                <p>
+                    <input type="text" value="Rakesh Shah" name="" id="" [disabled]="true" />
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-purple">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header"> What is Template reference variables? </div>
+                    <div class="card-body">
+                        <p> A template reference variable (#var) is a reference to a DOM element within a template. We use hash symbol (#) to declare a reference variable in a template.</p>
+                        <img src="./assets/images/Template_Reference_Variable.png" class="img-fluid" alt="" />
+                
+                        <p>In the above code the #name declares a variable on the input element. Now we can access any property of the input DOM using this reference variable. For example, </p>
+                
+                        <p>we can get the value of the input element as: name.value and the value of the placeholder property by name.placeholder anywhere in the template.</p>
+                
+                        <p>Finally, a Template reference variable refers to its attached element, component or directive. It can be accessed anywhere in the entire template. We can also use ref- instead of #. Thus, we can also write the above code as ref-name.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

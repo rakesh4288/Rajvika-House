@@ -1,0 +1,217 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div  class="float-left">
+                    <h1>{{pageTitle}} <i class="fa fa-indent" aria-hidden="true"></i> </h1>
+                </div>
+    
+                <div class="float-right">
+                    <button class="btn btn-sm btn-outline-warning" (click)="backToPage()">
+                        <i class="fa fa-backward" aria-hidden="true"></i> Back
+                    </button>
+                </div>
+    
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="types-of-binding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="float-left">
+                    <p>Angular provides some binding method with element.</p>
+                    <ul>
+                        <li>Property Binding</li>
+                        <li>Class Binding</li>
+                        <li>Style Binding</li>
+                        <li>Event Binding</li>
+                        <li>Data Binding</li>
+                    </ul>
+                </div>
+
+                <div class="float-right">
+                    <img src="./assets/images/property_binding_2.png" class="img-fluid" alt="">
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="property-binding">
+    <div class="container alert border-info">
+        <div class="row">
+            <div class="col-6">
+                <div>
+                    <h3>Property Binding:</h3>
+                    <p>Property binding is used to pass the data from component classs to template and setting the value of specific element.</p>
+                    <p>Property Binding is an example of <i>One-Way-Data-Binding</i> where data is transferred from class to template</p>
+
+                    <p class="text-danger">
+                        <i [innerText]="propertyBindingText"></i>
+                    </p>
+
+                    <div>
+                        <h5>Attribute VS Property</h5>
+                        <ul>
+                            <li>Attributes and Properties are not the same</li>
+                            <li>Attribute means - HTML</li>
+                            <li>Properties means - DOM</li>
+                            <li>Attribute initialize the DOM properties and they are done. Attribute values can not be change once they are initialized.</li>
+                            <li>And property values however can be change</li>
+                        </ul>
+                    </div>
+
+                    <input type="text" value="A">
+                    <input type="text" value="B" [id]="myId">
+                    <input type="text" value="C" id="{{myId}}">
+                    <p [innerText]="myId"></p>
+                    <button [disabled]="waitForMe" class="btn btn-danger btn-sm"> 
+                        Dummy Button
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div>
+                    <img src="./assets/images/property_binding_3.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="class-binding">
+    <div class="container alert border-dark">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <h3>Class Binding:</h3>
+                <p>Class binding is able to set the CSS class on a template</p>
+                
+                <p class="text-success">This is regular class using class Attribute</p>
+                
+                <p [class]="textDanger">Using [class] binding we can pass the binded property from component class. This red color is applied by the [class] property bind</p>
+
+                <p [class.text-info]="waitForMe">We can use the condition for [class] binding using boolean value</p>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <img src="./assets/images/class_binding.png" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="style-binding">
+    <div class="container alert border-success">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <h3>Style Binding:</h3>
+                <p>Style binding is also used for applying the CSS But these styles are applied through the inline styling not CSS classes </p>
+
+                <p [style.color]="'orange'"> using [style.color]="'orange'"</p>
+                <p [style.color]="green">Using property value [style.color]="green"</p>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <img src="./assets/images/style_binding.png" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="data-binding" class="bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="card-header">What is Data Binding ?</div>
+                    <div class="card-body">
+                        Data binding is nothing but just a communication process between component class and template. I mean data communication between TypeScript file and HTML file.
+                        <br>For example: Let’s suppose if you have some logical implementation inside the typescript file and you want to show in html template for the same. so, this process is called as data binding.
+
+                        <h6>What are the different types of data binding?</h6>
+                        We have 4 types of data binding in Angular.
+                        <ul>
+                            <li> String interpolation using curly brasis or 
+                                <span class="text-danger">Expression Binding</span> </li>
+                            <li> Property binding </li>
+                            <li> Event Binding like click change</li>
+                            <li> Two Way Data Binding </li>
+                        </ul>
+    
+                        <h6>To Way Data Binding: </h6>
+                        <p>
+                            When you are showing any data from the typescript file to html template or from html to typescript this is called two-way data binding.
+                            Like: [(ngModel)]
+                        </p>
+
+                        <p>
+                            <img src="./assets/images/two_way_data_binding.png" class="img-fluid" alt="">
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="card-header">What are the different types of component selectors?</div>
+                    <div class="card-body">
+                        We have three types of Component Selectors:
+                        <ul>
+                            <li>Element Selector</li>
+                            <li>Class Selector</li>
+                            <li>Property Selector</li>
+                        </ul>
+
+                        <p>
+                            <img src="./assets/images/component_selector.png" class="img-fluid" alt="">
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="card-body">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                <h5>Sample Services</h5>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Profile Pic</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let myUser of userList.data">
+                        <td>{{myUser.id}}</td>
+                        <td><img src="{{myUser.avatar}}" class="rounded-circle" alt=""></td>
+                        <td>{{myUser.first_name}}</td>
+                        <td>{{myUser.last_name}}</td>
+                        <td>{{myUser.email}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</section>

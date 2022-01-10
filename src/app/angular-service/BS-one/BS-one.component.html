@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-header bg-dark text-warning">Behaviour Subject One</div>
+    <div class="card-body">
+        <form #BSFormOne="ngForm" (ngSubmit)="saveForm(BSFormOne)">
+            <div class="form-group">
+                <label for="enter-one">Enter Something</label>
+                <input type="text" class="form-control" name="BS-input-one" id="enter-one" ngModel #trv_input="ngModel" required [class.is-invalid]="trv_input.touched && trv_input.invalid" />
+            </div>
+            
+            <div class="form-group" *ngIf="trv_input.touched && trv_input.invalid">
+                <small class="text-danger">
+                    Please enter something !!
+                </small>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger btn-sm">Save and Check</button>
+            </div>
+        </form>
+
+        <p>New Behaviour Subject Value: <span class="text-danger">
+            {{latestBS_value}}
+        </span></p>
+    </div>
+</div>

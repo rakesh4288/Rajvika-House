@@ -1,0 +1,278 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h1>What new in Angular 11 ? <i class="fa fa-star" aria-hidden="true"></i></h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="what-new-in-angular">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12"> 
+                <div>
+                    <ul>
+                        <li>Updated Hot Module Replacement (HMR)</li>
+                        <li>TypeScript 4.0 Support Module</li>
+                        <li>Webpack 5 Support</li>
+                        <li>Moving to ESLint</li>
+                        <li>Some Breaking Changes</li>
+                        <li>Automatic Inlining of Fonts</li>
+                    </ul>
+                    
+                    <p> Actually all angular version are the same there is no any big differences or changes when angular team comes with changes so they are changing into the Library side And the main purpose of updating is that - to make web application performance more faster </p>
+    
+                    <p>
+                        There are very minimum changes in the syntax level. Most of the changes from Library side. But few changes has been done into core packages If you see earlier version of angular <b>FormModule</b> was the part of <b>@angular/core</b> package But right now it has been seperated by angular core library. So Currently all <b>FormsModule</b> is the part of <b>@angular/forms</b> 
+                    </p>
+    
+                    <a class="btn btn-outline-info" [routerLink]="['/angular-new-features']">Read More About Angular 11 New angular-new-features <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+    
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12"> 
+                <br>
+                <p>
+                    <img src="../assets/images/angular_11.jpg" alt="" class="img-fluid rounded" />
+                </p>
+                
+                <p>
+                    <img src="../assets/images/angular_update.png" alt="" class="img-fluid rounded" />
+                </p>
+            </div>
+            
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <p>
+                    <br>
+                    <img src="../assets/images/angular_architecture.png" alt="" class="img-fluid rounded" />
+                </p>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <p>
+                    <br>
+                    <img src="../assets/images/angular_architecture_2.png" alt="" class="img-fluid rounded" />
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="small-questions" class="bg-gray-with-border">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="alert border-danger">
+                    <h4>What are the Entry Components ?</h4>
+                    <p>
+                        Entry Components are the components such as tiles and modals that you generate dynamically instead of with HTML selectors. You must declare the entry components to ensure that webpack does not remove them as unused code during the tree-shaking.Generally this is suitable for some login popup component.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="alert border-danger">
+                    <h4>What is tree shaking in angular?</h4>
+                    <p>
+                        Tree shaking is the ability to remove any code that we are not actually using in our application from the final bundle. It's one of the most effective techniques to reduce the footprint of an application. Basically this techniques removes the unwanted code which you are not using the application and accidently you mentioned it.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="alert border-danger">
+                    <h4>What is Transpiling in Angular?</h4>
+                    <p>
+                        Transpiling is the process of converting typescript into JavaScript, this is one of the most important concepts in angular, basically browser doesn’t understand typescript directly. Browser can only understand JavaScript CSS and HTML. So once our application development is done then we need to build using ng build and then all typescript code traspilled into JavaScript.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="alert border-danger">
+                    <h4>What is Typescript ?</h4>
+                    <div>
+                        <ul>
+                            <li>TypeScript is the superset of JavaScript</li>
+                            <li>It added a type to JavaScript</li>
+                            <li>You have to provide the type of every variable</li>
+                            <li>It gives the nice Object Oriented Programming environment</li>
+                            <li>Ultimately your TypeScript code will be converted to Pure JavaScript Because Browser does not understand TypeScript.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="constructor-vs-ngoninit" class="bg-blue text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h2 class="text-white">Why should ngOnInit be used ? If we have Constructor already</h2>
+                <p>
+                    The main difference between constructor and ngOnInit is that ngOnInit is lifecycle hook and runs after constructor. Component interpolated template and input initial values aren't available in constructor, but they are available in ngOnInit . The practical difference is how ngOnInit affects how the code is structured.
+                </p>
+
+                <p>The Constructor is the default method of class and its executed when the class is initiated and ensures the proper initializatoin of the field in the class.</p>
+                <p>Constructor creates the instance the another class by dependency</p>
+
+                <p>ngOnInit is the life cycle hook which is called by Angular. When you want to perform some action while component loaded in the browser so you need to bind with ngOnInit() life cycle hook.</p>
+                
+                <p>And If you want to work with ngOnInit life cycle hook so you need to import the plugin from angular core package. </p>
+
+                <p>
+                    <img src="./assets/images/constructor_ngOnInit_1.png" class="img-fluid rounded" alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="ng-module" class="border-left-green border-right-green">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h3>What are all the metadata properties of NgModule? And what are they used for?</h3>
+                <p>
+                    @NgModule accepts a metadata object that tells Angular how to compile and launch the application. The properties are:
+                </p>
+
+                <div>
+                    <ul>
+                        <li><b>Declaration:</b> The application's components, which belongs to the NgModule class. We must have to declare every component in an NgModule class. If we use a component without declaring it, we'll see a clear error message in the browser console, And this is array format value we can store multiple components which are required to the application.</li>
+
+                        <li><b>Imports:</b> Inside imports we can pass the modules which are reuired for the development process like Router Module, Forms Module, Common Module and other many modules.</li>
+
+                        <li><b>Exports:</b> Inside exports we are passing some configuration which are necessary for other component</li>
+
+                        <li><b>Bootstrap:</b> This is one of interesting meta of NgModule. Inside this we can pass the our first component which we need to show firstly while launching the application.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <p>
+                    <img src="./assets/images/angular_1.png" class="img-fluid rounded" alt="">
+                </p>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <p>
+                    <img src="./assets/images/angular_2.png" class="img-fluid rounded" alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="polyfills" class="bg-purple text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h2 class="text-white">What is the use of polyfills.ts file in Angular</h2>
+                <p>
+                    Polyfills in angular are few lines of code which make your application compatible for different browsers. The code we write is mostly written in ES6(New Features: Overview and Comparison) and is not compatible with IE or firefox and needs some environment setups before being able to be viewed or used in these browsers.
+                </p>
+
+                <p>
+                    Polyfills.ts was provided by angular to help you do away with need to specifically setup everything.
+                </p>
+
+                <h5 class="text-warning"><i>Basically Polyfills is process of making our application browser compitable. Since we have different browsers and their version also so this is useful for compitable purpose nothing else</i></h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="quick-questions">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>What the use of Zone.js in Angular ?</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Zonejs is one of the core library used in Angularjs. Zone creates a wrapper around all asynchronous operations in the browser such as user interactions, HTTP, timers and any other changes that can cause changes in state.
+                        </p>
+
+                        <p>
+                            By default, in an Angular app every task runs in the “Angular” Zone, which is called NgZone . There is only one Angular Zone and change detection is triggered exclusively for async operations which run in the NgZone 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>What is safe navigation operator in angular?</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            When we are binding the object in template and let's suppose any object value is not available then it will through the error. So for handling this error we can use “Safe Navigation Operator”. “Safe Navigation Operator” is nothing but just ? before the object value.
+                        </p>
+
+                        <p>
+                            <img src="./assets/images/safe-navigation-default-response-angular.png" class="img-fluid" alt="">    
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section id="interview-questions">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/-jeoyDJDsSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="angular-matererial" class="bg-gray-with-border">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-justify">
+                <h2>Setps to install - Angular Material</h2>
+                <ul>
+                    <li> When you go to Official Angular Material website and you can find like Getting Started link from where we can install the Angular Material step by step. </li>
+                    <li>So, Firslty you need to open terminal CMD with project location and add this command - <b>ng add @angular/material</b></li>
+                    <li>Then your CMD will ask about the css style theme which do you want to save. we have indico pink and purple theme and few other theme is also available. you can select anyone from them</li>
+                    <li>Then it will ask for Browser Animation Module for Angular Material, And later you need appened into app module with import array</li>
+                    <li>Hammer Js is also asking some angular material Gestures purpose</li>
+                </ul>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/WzVeomoAFUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div>
+                    <p>Now your Angular Material has been installed. You can check with Angular.json file, here in Styles [] you can see your selected indico pink theme css is available </p>
+
+                    <p>Check you main index.html file, its added two links one for Font which is Roboto from Angular Material and another one is Angular Material icons</p>
+
+                    <p class="text-danger"> 
+                        Later - Now you have all things related to Angular Material and you are ready to use Angular Material features.
+                    </p>
+
+                    <p>Whatever you want to use you need to add their plugin in App module and you can use specific directives.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

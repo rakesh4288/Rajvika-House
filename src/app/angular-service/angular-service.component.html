@@ -1,0 +1,376 @@
+<section id="page-title" class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="float-left">
+                    <h1 class="text-warning">{{pageTitle}} <i class="fa fa-cogs" aria-hidden="true"></i> </h1>
+                </div>
+    
+                <div class="float-right">
+                    <button class="btn btn-sm btn-warning" (click)="backToPage()">
+                        <i class="fa fa-backward" aria-hidden="true"></i> Back
+                    </button>
+                </div>
+    
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="rest-api">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12"> 
+                <div class="card">
+                    <div class="card-header"> <b>What is RestFul API</b> </div>
+                    <div class="card-body">
+                        A RESTful API is an application programming interface (API) that uses HTTP requests and by using HTTP request you can perform some operation like - 
+                        <ul>
+                            <li>GET</li>
+                            <li>POST</li>
+                            <li>PUT</li>
+                            <li>DELETE data.</li>
+                        </ul>
+    
+                        <p>
+                            <b>GET :</b> By using this method we can retrieve the all data from API And we can bind this object into HTML as per our UI design.
+                        </p>
+    
+                        <p>
+                            <b>POST: </b> When you need to send any data from UI to backend so we can use POST method to send data in the form of object.
+                        </p>
+    
+                        <p> <b>PUT: </b> This method allows to update any existing record using one value and it will effect the backend data 
+                        </p>
+    
+                        <p>
+                            <b>DELETE:</b> By using this HTTP method we can delete any existing record.
+                        </p>
+                    
+                    </div>
+                </div>
+
+                <br>
+            </div>
+    
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <p>These same we can follow using Angular services:</p> 
+                <img src="./assets/images/services_methods.png" class="img-fluid" alt="" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <h5>How to multiple call api at a time:</h5>
+                <img src="./assets/images/multiple_api.png" class="img-fluid" alt="" />
+            </div>
+
+            <div class="col-6">
+                <h5>How to copy or clone the object:</h5>
+                <img src="./assets/images/object_copy.png" class="img-fluid" alt="" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <table class="table table-striped">
+                    <thead class="bg-danger text-white">
+                      <tr>
+                        <td>HTTP Codes</td>
+                        <td>Description</td>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>1XX</td>
+                        <td>Information about the connection</td>
+                      </tr>
+
+                      <tr>
+                          <td>2XX</td>
+                          <td>Success - Connection Established & Ready to communicate</td>
+                      </tr>
+
+                      <tr>
+                        <td>3XX</td>
+                        <td>Redirection - Ready to pass message from both side, client & server</td>
+                    </tr>
+
+                    <tr>
+                        <td>4XX</td>
+                        <td>Client Error - Client machine is getting error from server. Sometimes client has not full authority to access some page or some request</td>
+                    </tr>
+
+                    <tr>
+                        <td>5XX</td>
+                        <td>Server - Server producing some error like 502 bad request</td>
+                    </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="country-service" class="bg-gray-with-border">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12"> 
+                <h5>Simple Country Service</h5>
+                <select class="form-control" name="" id="" #countryName (change)="getCountryInfo(countryName)">
+                    <option value="">Please select one country</option>
+                    <option value="{{countryList.name}}" *ngFor="let countryList of countryList">{{countryList.name}}</option>
+                </select>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div *ngIf="oneCountryBoolean">
+                    <table class="table table-striped bg-white table-responsive">
+                        <tr>
+                          <th>Country Name</th>
+                          <td>{{oneCountryData[0].name}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Native Name</th>
+                            <td>{{oneCountryData[0].nativeName}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Capital</th>
+                            <td>{{oneCountryData[0].capital}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Region</th>
+                            <td>{{oneCountryData[0].region}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Sub Region</th>
+                            <td>{{oneCountryData[0].subregion}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Time Zone</th>
+                            <td>{{oneCountryData[0].timezones}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Cioc</th>
+                            <td>{{oneCountryData[0].cioc}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Calling Codes</th>
+                            <td>{{oneCountryData[0].callingCodes}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                <div *ngIf="oneCountryBoolean">
+                    <img src="{{oneCountryData[0].flag}}" width="100%" height="200px" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="behvaiour-subject">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"> 
+                <h3>What is Behavior Subject in Angular</h3>
+                <p>
+                    Behavior subject is one of the best approaches to find out current emitted value. So Behavior subject is passing the latest value to the execution.
+                </p>
+
+                <p>
+                    If you want to share the updated value to other component, then you can use this feature to passing the latest data. <b>This should be imported from rxjs/operators</b>
+                </p>
+
+                <p>
+                    Behavior subject is also one kind of Observable which is getting the latest value and <b>we can pass new value by using .next() property</b>
+                    <br>
+                    <span class="text-danger">Regarding this you need to subscribe the Behaviour Subject</span>
+                </p>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"> 
+                <p>
+                    <img src="../../assets/images/Behaviour_Subject.png" class="img-fluid" alt="">
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <behaviour-subject-one></behaviour-subject-one>
+            </div>
+
+            <div class="col-4">
+                <behaviour-subject-two></behaviour-subject-two>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="depending-injection" class="bg-purple text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h4 class="text-warning">Dependency Injection in Angular</h4>
+                <p>
+                    Dependency Injection is the coding pattern in which class receives its dependencies from external sources rather than creating itself.
+                </p>
+                
+                <ul>
+                    <li>As the name like Dependency injection - there is some object which are dependent to another project.</li>
+                    <li>This is a way to create objects that depends upon other objects</li>
+                    <li>Some component values are also dependent upon some other services. And service is not displaying any information until unless you requested something.</li>
+                    <li>Make component reusable, maintainable and testable</li>
+                </ul>
+
+                <p>
+                    <img src="./assets/images/DI_1.png" class="img-fluid rounded" alt="">
+                </p>
+
+                <h4 class="text-warning">
+                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+                    &nbsp;<i>The Biggest benefit of using Dependency Injection is that - If you want to update something which is needed to all application then in that case you need to check at only one place and it will occured the all related places. You don't need to change everywhere.</i>
+                </h4>
+
+                <h4 class="text-white">
+                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+                    &nbsp;<i>This is a good sign of Software Architecture. Because updating the execution mode from one place that is good.</i>
+                </h4>
+
+                <h2 class="text-white">Steps to integrate the Dependency Injection:</h2>
+                <ul>
+                    <li>Firstly, we need to use services for making dependency injection</li>
+                    <li>Use @Injectable() with provideIn:'root' meta data</li>
+                    <li>Now your dependency injection setup is done and its ready to integrate.</li>
+                    <li>Regarding this we can integrate Dependency injection in any component. we need to import the services file where we have alreay decorated the Dependency Injection.</li>
+                    <li>Now we can use the [providers] inside the component meta data and later we can must have to attach with Constructor() method.</li>
+                    <li>By this way you can refer the Dependency Injection you can perform any set of methods which is belogning from another component.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="observales">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h3>Observables Vs Promises?</h3>
+                <div>
+                    <h6>Observables</h6>
+                    <p>Angular makes use of observables as an interface to handle a variety of common asynchronous operations.</p>
+                    <p>Observables is the mechanism by using them we can communicate with server. We can retrieve the data and we can also send the data. I mean we can perform the any Rest ful API operations like HttpClient.get(),HttpClient.post(), HttpClient.put(), HttpClient.delete()</p>
+
+                    <p>
+                        This is like the middle layer of API integration. Observables are communicating with from UI to API.
+                    </p>
+
+                    <p>
+                        Observables are lazy, which means nothing will be happen until unless you are not subscribing to them.
+                    </p>
+
+                    <p>
+                        Observables provides the methods such as map(), catch()
+                    </p>
+
+                    <p>
+                        Observable is cancellable.
+                    </p>
+
+                    <p>
+                        Observable returns a multiple values.
+                    </p>
+                </div>
+
+                <div>
+                    <h6>Promises</h6>
+                    <p>
+                        Whereas Promises are eager; which means as soon as a promise is created, the execution will take place and return the response either in success way or failed way. This is always returing the one value.
+                    </p>
+
+                    <p>
+                        In observable you can pass multiple events at a time but with Promises it will not possible. Promise will handle the single event. <br>
+                        Promise provides the methods like then() and catch()
+                    </p>
+
+                    <p>
+                        Promise is not cancellable.
+                    </p>
+
+                    <p>
+                        Promise will return the single value whether it is Success or failed.
+                    </p>
+                </div>
+
+                <div>
+                    <img src="./assets/images/observables_1.png" class="img-fluid rounded" alt="">
+                </div>
+
+                <hr>
+
+                <div class="example alert border-info">
+                    <p>
+                        I want to add one good suitable example over here. Remember Newpaper company treat like Angular Services, and this Newspaper has a veriety of sources to collect the news around the world. after getting all news they are binding with good format for reading purpose. After the all processing the all steps then Newspaper company delivering the Newspaper only to the Subscribed homes. So if you Subscribed the perticular newspaper then only you can get this.
+                    </p>
+
+                    <p>
+                        Similarly here also, after the getting the all data in the format of Observables only subscribe component can get the data. A number of component can Subscribed and these all component can received the data.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <p>
+                    <img src="./assets/images/observables_2.png" class="img-fluid rounded" alt="">
+                </p>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"> 
+                <p>
+                    <img src="./assets/images/observables_3.png" class="img-fluid rounded" alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Http-Interceptor" class="blue-bg-gradient text-warning">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h4 class="text-warning">What is an interceptor in angular?</h4>
+                <p>Interceptors provide a way to intercept for outgoing requests or incoming responses. They are very similar to the concept of middleware where its playing a role of handling & validiting the all https request. </p>
+
+                <p>Interceptors can be useful for features like caching and logging.</p>
+
+                <p>You all https requests & responsed are passign from Http Interceptors</p>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <p>
+                    <img src="./assets/images/http_interceptor_1.png" class="img-fluid rounded" alt="">
+                </p>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <p>
+                    <img src="./assets/images/http_interceptor_2.png" class="img-fluid rounded" alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

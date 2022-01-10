@@ -1,0 +1,158 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                <h1 class="text-warning">{{pageTitle}} 
+                    <i class="fa fa-opera" aria-hidden="true"></i>
+                </h1>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <p class="text-white">
+                    http://localhost:3000/employee-record <br>
+                    json-server --watch db.json <br>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <div class="alert border-success">
+                    <h5>Add New Employee Record</h5>
+                    <form #employeeForm="ngForm">
+                        <div class="form-group">
+                            <label for="empId">Employee Id</label>
+                            <input type="text" class="form-control" name="empId" id="empId" [(ngModel)]="empObj.empId" #trv_empId="ngModel" required minlength="4" maxlength="4" [class.is-invalid]="trv_empId.touched && trv_empId.invalid"  />
+
+                            <div *ngIf="trv_empId.errors && (trv_empId.touched && trv_empId.invalid)">
+                                <small class="text-danger" *ngIf="trv_empId.errors.required">Please enter valid input !</small>
+                                <small class="text-danger" *ngIf="trv_empId.errors.minlength">
+                                    Employee Id should be 4 digit input only !
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emp-name">Employee Name</label>
+                            <input type="text" id="emp-name" name="empName" class="form-control" [(ngModel)]="empObj.empName" #trv_empName="ngModel" required [class.is-invalid]="trv_empName.touched && trv_empName.invalid" />
+                            <div *ngIf="trv_empName.touched && trv_empName.invalid">
+                                <small class="text-danger">Please enter employee name !</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emp-email">Employee Email</label>
+                            <input type="text" class="form-control" id="emp-email" name="empEmail"  [(ngModel)]="empObj.empEmail" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #trv_empEmail="ngModel" [class.is-invalid]="trv_empEmail.touched && trv_empEmail.invalid" required />
+
+                            <div *ngIf="trv_empEmail.errors && (trv_empEmail.touched || trv_empEmail.invalid)">
+                                <small class="text-danger" *ngIf="trv_empEmail.errors.pattern">Please enter valid email id</small>
+                            </div>
+
+                            <div *ngIf="trv_empEmail.errors && trv_empEmail.touched">
+                                <small class="text-danger" *ngIf="trv_empEmail.errors.required">Please Enter Email Id !!</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="emp-phone">Employee Phone</label>
+                            <input type="text" class="form-control" id="emp-phone" name="empPhone"  [(ngModel)]="empObj.empPhone" pattern="^\d{10}$" #trv_empPhone="ngModel" [class.is-invalid]="trv_empPhone.touched && trv_empPhone.invalid" required />
+
+                            <div *ngIf="trv_empPhone.errors && (trv_empPhone.invalid || trv_empPhone.touched)">
+                                <small class="text-danger" *ngIf="trv_empPhone.errors.pattern">Mobile no should be equal to 10 and don't assign the alphabetic</small>
+                            </div>
+
+                            <div *ngIf="trv_empPhone.errors && trv_empPhone.touched">
+                                <small class="text-danger" *ngIf="trv_empPhone.errors.required">Please Enter Phone Number !!</small>
+                            </div>
+                        </div>                       
+                        
+                        <div class="form-group">
+                            <label for="emp-city">City</label>
+                            <input type="text" class="form-control" id="emp-city" name="empCity" [(ngModel)]="empObj.empCity" #trv_empCity="ngModel"  required [class.is-invalid]="trv_empCity.touched && trv_empCity.invalid" />
+
+                            <div *ngIf="trv_empCity.touched && trv_empCity.invalid">
+                                <small class="text-danger">Please enter your city name !</small>
+                            </div>
+                        </div>                     
+                        
+                        <div class="form-group">
+                            <label for="">Gender</label>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" value="male" id="maleID" name="empGender" required [(ngModel)]="empObj.empGender" #trv_empGender="ngModel" />
+                                <label for="maleID" class="form-check-label">Male</label>
+                            </div>
+        
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" value="female" id="femaleID" name="empGender" required [(ngModel)]="empObj.empGender" #trv_empGender="ngModel" /> 
+                                <label for="femaleID" class="form-check-label">Female</label>
+                            </div>
+
+                            <div *ngIf="trv_empGender.touched && trv_empGender.invalid">
+                                <small class="text-danger">Please select yout gender !</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="checkbox" value="yes" id="newsID" name="news" required [(ngModel)]="empObj.news" #trv_empNews="ngModel" />
+                            <label for="newsID">&nbsp; Get News update</label>
+
+                            <div *ngIf="trv_empNews.touched && trv_empNews.invalid">
+                                <small>This field is required !</small>
+                            </div>
+                        </div>
+        
+                        <div class="form-group" *ngIf="!isEdit">
+                            <button type="button" class="btn btn-primary btn-sm" [disabled]="employeeForm.invalid" (click)="inserNewRecord(employeeForm)">Register New Record</button>
+                        </div>
+
+                        <div class="form-group" *ngIf="isEdit">
+                            <input type="hidden" value="{{empObj.id}}" />
+                            <button type="button" class="btn btn-info btn-sm" [disabled]="employeeForm.invalid" (click)="updateEmpRecord()">Update Record</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                <h5>All Employee Record !</h5>
+                <div class="emp-table table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>Emp id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Gender</th>
+                            <th>Subscription</th>
+                            <th colspan="2">&nbsp;</th>
+                          </tr>
+                        </thead>
+    
+                        <tbody>
+                          <tr *ngFor="let empObject of getEmpData;">
+                            <td>{{empObject.empId}}</td>
+                            <td>{{empObject.empName}}</td>
+                            <td>{{empObject.empEmail}}</td>
+                            <td>{{empObject.empPhone}}</td>
+                            <td>{{empObject.empCity}}</td>
+                            <td>{{empObject.empGender}}</td>
+                            <td>{{empObject.news}}</td>
+                            <td>
+                                <i class="fa fa-pencil-square text-primary cursorPointer" aria-hidden="true" title="Edit" (click)="editEmpRecord(empObject)"></i> &nbsp;
+                                <i class="fa fa-trash text-danger cursorPointer" aria-hidden="true" title="Delete" (click)="deleteEmpRecord(empObject.id)"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

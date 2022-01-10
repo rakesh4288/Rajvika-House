@@ -1,0 +1,195 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div  class="float-left">
+                    <h1>{{pageTitle}} </h1>
+                </div>
+    
+                <div class="float-right">
+                    <!-- <button class="btn btn-sm btn-outline-warning" (click)="backToPage()">
+                        <i class="fa fa-backward" aria-hidden="true"></i> Back
+                    </button> -->
+                </div>
+    
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                
+                <p>
+                    Pipes are simple functions you can use in template expressions to accept an input value and return a transformed value. Pipes are useful because you can use them throughout your application, while only declaring each pipe once. For example, you would use a pipe to show a date as February 04, 1988 rather than the raw string format.
+                </p>
+        
+                <ul>
+                    <li>Pipes are nothing but just a process By using them you can get a human readbale format</li>
+                    <li>Pipes are basically filter or formatter which helps to focus format or transform raw data and display user.</li>
+                </ul>
+    
+                <a href="https://www.positronx.io/angular-7-pipes-anatomy-of-angular-pipes/" target="_blank" class="btn btn-outline-danger">Read More about Angular Pipes</a>
+    
+                <br><br>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h3>Angular offers lots of built-in Pipes to deal with specific problems while developing Angular application.</h3>
+                <p>Angular offers some built-in Pipes API to update your data in a quick snap. It also allows you to create custom Pipes in your app.</p>
+                <h5> 
+                    <span class="badge badge-dark">Currency Pipe</span> &nbsp;
+                    <span class="badge badge-secondary">Date Pipe</span> &nbsp;
+                    <span class="badge badge-primary">Uppercase Pipe</span> &nbsp;
+                    <span class="badge badge-warning">Lowercase Pipe</span> &nbsp;
+                    <span class="badge badge-success">Jason Pipe</span> &nbsp;
+                    <span class="badge badge-danger">Decimal Pipe</span> &nbsp;
+                    <span class="badge badge-success">Percent Pipe</span> &nbsp;
+                    <span class="badge badge-info">Slice Pipe</span>
+                </h5>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">Currency Pipe <i class="fa fa-inr" aria-hidden="true"></i></div>
+                    <div class="card-body">
+                        The currency pipe in angular helps to convert numbers in various currencies.
+                        <p>
+                            USD: {{ itemPrice | currency:'USD':true }}, 
+                            EUR: {{ itemPrice | currency:'EUR':true}},
+                            INR: {{ itemPrice | currency:'INR' }}
+                        </p>
+
+                        <img src="./assets/images/pipes_currency.png" class="img-fluid rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="card">
+                    <div class="card-header bg-danger text-white">Date Pipe <i class="fa fa-calendar" aria-hidden="true"></i></div>
+                    <div class="card-body">
+                        The date pipe in Angular helps to format the Date in Angular.
+                        <p>Current Date: <b>{{ currentDate | date: 'fullDate' }}</b></p>
+                        <p>Get Year: <b>{{ currentDate | date: 'yy' }}</b></p>
+                        <p>Get Time: <b>{{ currentDate | date: 'hm' }}</b></p>
+                        <img src="./assets/images/pipes_date.png" class="img-fluid rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">Slice Pipe <i class="fa fa-sliders" aria-hidden="true"></i>
+                    </div>
+                    <div class="card-body">
+                        The Slice pipe API in Angular formulate a subset list or string.
+                        <p>Current Date: <b>{{ currentDate | date: 'fullDate' }}</b></p>
+                        <ul>
+                            <li *ngFor="let myUser of allUser | slice:2"> 
+                                {{myUser}}
+                            </li>
+                        </ul>
+                        <img src="./assets/images/pipes_slice.png" class="img-fluid rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="card">
+                    <div class="card-header bg-warning text-white">Decimal Pipe <i class="fa fa-stop-circle-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="card-body">
+                        The Decimal pipe helps to format decimal values in Angular. Decimal Pipe API concerns with CommonModule in Angular.
+                        <ul>
+                            <li> {{myNum1 | number}} </li>
+                            <li> {{myNum2 | number}} </li>
+                        </ul>
+                        <img src="./assets/images/pipes_slice.png" class="img-fluid rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">Jason Pipe <i class="fa fa-file-text" aria-hidden="true"></i>
+                    </div>
+                    <div class="card-body">
+                        The JSON pipe API works to expose an object as a JSON string in the Angular app. It complements the JSON.stringify method behind the curtains.
+                        <p>{{countryList | json}}</p>
+                        <img src="./assets/images/pipes_json.png" class="img-fluid rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="card">
+                    <div class="card-header bg-danger text-white">Percent Pipe <i class="fa fa-file-text" aria-hidden="true"></i>
+                    </div>
+                    <div class="card-body">
+                        The Percent pipe API in Angular modifies a number into its percentage value.
+                        <p>{{myNum2 | percent}}</p>
+                        <img src="./assets/images/pipes_percent.png" class="img-fluid rounded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="card">
+                    <div class="card-header bg-danger text-white">Lowercase & Uppercase Pipe <i class="fa fa-money" aria-hidden="true"></i>
+                    </div>
+                    <div class="card-body">
+                        Lowercase or Uppercase pipes help to format text to either lower or upper case in an Angular app.
+                        <p>{{convertText | lowercase}}</p>
+                        <p>{{convertText | uppercase}}</p>
+                        <p>{{5 | squareValue}}</p>
+                        <img src="./assets/images/pipes_lowercase_uppercase.png" class="img-fluid rounded" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="custom-directives">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h2>How do we call angular Pipes with multiple arguments or How can we create custom Pipes?</h2>
+                <h5>Well if you want to work with multiple argument in Pipes So this can be posssible with Custom Pipe</h5>
+
+                <div>
+                    <ul>
+                        <li>We can achieve this requirement by using <b>“PipesTransform”</b> interface and This will allow you to pass the multiple arguments.</li>
+                        <li>Pipe class implements the <b>“PipesTransform”</b> interface transform method that accepts and input value and returns the transformed result.</li>
+                        <li>To work with pipe we need to import <b>Pipe, PipeTransform</b> and this will be available inside ‘@angular/core’ library</li>
+                        <li>Then we will decorate them using @Pipe()</li>
+                        <li><b>name: 'custom-pipe-name'</b> name metadata will be use for providing a name of this pipe </li>
+                    </ul>
+
+                    <div>
+                        <img src="./assets/images/pipe_pipeTransform.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

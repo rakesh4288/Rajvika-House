@@ -1,0 +1,123 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <h1>{{title}}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="new-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <h5>1) Hot Module Replacement</h5>
+                <ul>
+                    <li>Hot Module Replacement is a mechanism that allows modules to be replaced without full browser refresh.</li>
+                    <li>We don't need to configue this Because actually angular providing directly with the command line.</li>
+                </ul>
+    
+                <p>The command is like: <b>ng serve --hmr</b> This Features is generating the output without refreshing the web page. When you fire this command from command prompt -> It will enable the webpack js configuration and starts.</p>
+                <hr>
+                
+                <h5>2) TypeScript 4.0 Script Support</h5>
+                <ul>
+                    <li>Angular drop support of typescript 3.9</li>
+                    <li>Now Angular 11 supports only 4.0 </li>
+                    <li>The main reason behind this to upgrade is: Speed up the build process</li>
+                </ul>
+                <hr>
+    
+                <h5>3) Webpack 5 Support</h5>
+                <ul>
+                    <li>Angular 11 starts the experimental support of webpack 5</li>
+                    <li>And if you want work with latest webpack 5 then you can update this version using package.jason file</li>
+                    <li>By using this webpack 5 the projects bundle size will too smaller than other angular version</li>
+                    <li>Since this is on Experimental mode So Angular Team also suggetsed - Don't use for the production envrionment. May be your bundle chunks not going smaller</li>
+                </ul>
+    
+                <hr>
+    
+                <h5> 4) Moving to the ESLint</h5>
+                <p>Before knowing the ESLint we should to understand what is the Linting Process in Angular ?</p>
+                <p>Actually Linting is the process of improving the code quality and it is checking any potential errors in your code such as syntax errors, incorrectly spelled variable names, and many more. This can save your time and help you to write better code.</p>
+                <ul>
+                    <li>Angular 11 provides the ESLint. It means the ECMA Script Linting process</li>
+                    <li>Earlier TSLint was popular. TSLint was one of the most popular linting tool among the developer for a long period of time.</li>
+                    <li>But it was recently deprecated in version of Angular 11</li>
+                </ul>
+    
+                <hr>
+    
+                <h5>5) Housekeeping - Some bkreaking changes</h5>
+                <ul>
+                    <li>Angular 11 removes the support of IE 9,11 and IE mobile completely</li>
+                    <li>typescript 3.9 also deprecated in Angular 11 version</li>
+                    <li>PreserveQueryParam has been removed in router from Angular 11</li>
+                    <li>And now angular 11 introduced - queryParamsHandling="Preserve"</li>
+                </ul>    
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="hr-strong"></div>
+
+<div class="decorator">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div>
+                    <h3>Angular Architecture</h3>
+                    <img src="./assets/images/angular_architecture.png" class="img-fluid" alt="">
+                </div>
+            </div>
+    
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"> 
+                <div class="card">
+                    <div class="card-header"> What is decorator in angular </div>
+                        <div class="card-body">
+                            Decorator is one kind of mechanism or approach whose job to make decorating the class. Some task is like to maintain the Meta data and sometimes arranging the modules and components.
+                            <p>Here we have decorator which we are using to build the requirement:</p>
+                            <ul>
+                                <li>@NgModules()</li>
+                                <li>@Component()</li>
+                                <li>@Directives</li>
+                                <li>@Input()</li>
+                                <li>@Output()</li>
+                                <li>@injectable</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ng-build-ng-serve" class="bg-gray-with-border">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div>
+                    <h3>Angular ng serve vs ng build </h3>
+                    <p>Usually, ng serves command is used to build, watch, and serve the application from local memory.</p>
+                    <p>ng serve build the application in memory while ng build runs on the Hard Disk. So when you want to go for production deployment then you should to use ng-build.</p>
+                    <p>After firing command like ng-build you can see one folder like <b>Distt</b> where you can see your components services directives all modules into Bundle format. and the size of project is too less for performance enhancement.</p>
+                </div>
+
+                <div>
+                    <h3>What does ng build --prod</h3>
+                    <p>ng build --prod flag compress your JS file, doing some action like below: </p>
+                    <ul>
+                        <li>removes the unwanted material and comments</li>
+                        <li> generating stable package for production envrionment and its ready to move</li>
+                        <li>Doing minification of all files</li>
+                        <li>Reducing folder size.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
